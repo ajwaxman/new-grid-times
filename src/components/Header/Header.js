@@ -38,11 +38,14 @@ const Header = () => {
           </button>
         </DesktopActionGroup>
         <Logo />
-        <DesktopActionGroup>
-          <button>
-            <User size={24} />
-          </button>
-        </DesktopActionGroup>
+        <SubscriberGroup>
+          <Button>
+            Subscribe
+          </Button>
+          <SubscriberLink>
+            Already a subscriber?
+          </SubscriberLink>
+        </SubscriberGroup>
       </MainHeader>
     </header>
   );
@@ -83,6 +86,23 @@ const DesktopActionGroup = styled(ActionGroup)`
   }
 `
 
+const SubscriberGroup = styled.div`
+  display: none;
+  @media ${QUERIES.laptopAndUp} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+`
+
+const SubscriberLink = styled.p`
+  color: var(--color-gray-900);
+  font-size: 0.875rem;
+  text-decoration: underline;
+  font-style: italic;
+`
+
 const MainHeader = styled(MaxWidthWrapper)`
   display: flex;
   align-items: center;
@@ -90,7 +110,7 @@ const MainHeader = styled(MaxWidthWrapper)`
   margin-top: 32px;
   margin-bottom: 48px;
   @media ${QUERIES.laptopAndUp} {
-    justify-content: space-between;;
+    justify-content: space-between;
   }
 `;
 
