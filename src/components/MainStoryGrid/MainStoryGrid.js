@@ -62,6 +62,11 @@ const MainStorySection = styled.section`
 
 const SecondaryStorySection = styled.section`
   grid-area: secondary-stories;
+`;
+
+const StoryList = styled.div`
+  display: flex;
+  flex-direction: column;
   a {
     margin-bottom: 16px;
     padding-bottom: 16px;
@@ -72,11 +77,6 @@ const SecondaryStorySection = styled.section`
       padding-bottom: 0;
     }
   }
-`;
-
-const StoryList = styled.div`
-  display: flex;
-  flex-direction: column;
 `;
 
 const OpinionSection = styled.section`
