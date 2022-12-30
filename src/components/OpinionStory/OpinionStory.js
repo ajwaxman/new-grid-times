@@ -49,7 +49,7 @@ const Avatar = styled.img`
   border-radius: 50%;
   object-fit: cover;
   grid-area: avatar;
-  align-self: center;
+  align-self: start;
 `;
 
 const AuthorName = styled.p`
