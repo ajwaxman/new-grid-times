@@ -30,6 +30,13 @@ const Wrapper = styled.article`
     ;
     grid-template-columns:  1fr;
   }
+  @media ${QUERIES.laptopAndUp} {
+    grid-template-areas:
+      'image heading'
+      'image abstract';
+    ;
+    grid-template-columns: 120px 1fr;
+  }
 `;
 
 const Image = styled.img`
@@ -50,6 +57,9 @@ const Heading = styled.h2`
   margin-top: -2px;
   @media ${QUERIES.tabletAndUp} {
     margin-top: 4px;
+  }
+  @media ${QUERIES.laptopAndUp} {
+    margin-top: -2px;
   }
 `;
 
