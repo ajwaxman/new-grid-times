@@ -40,7 +40,7 @@ const Footer = () => {
           </Social>
         </TopRow>
         <MainNavArea>
-          <Content>
+          <nav>
             <MainNavHeading>Discover Content</MainNavHeading>
             <MainNavList>
               <li>
@@ -59,8 +59,8 @@ const Footer = () => {
                 <a href="/oped">Opinion and Editorial</a>
               </li>
             </MainNavList>
-          </Content>
-          <Websites>
+          </nav>
+          <nav>
             <MainNavHeading>Regional Websites</MainNavHeading>
             <MainNavList>
               <li>
@@ -79,8 +79,8 @@ const Footer = () => {
                 <a href="/au">New Grid Australia</a>
               </li>
             </MainNavList>
-          </Websites>
-          <Careers>
+          </nav>
+          <nav>
             <MainNavHeading>Careers</MainNavHeading>
             <MainNavList>
               <li>
@@ -93,8 +93,8 @@ const Footer = () => {
                 <a href="/culture">Company Culture</a>
               </li>
             </MainNavList>
-          </Careers>
-          <Legal>
+          </nav>
+          <nav>
             <MainNavHeading>Legal and Privacy</MainNavHeading>
             <MainNavList>
               <li>
@@ -113,7 +113,7 @@ const Footer = () => {
                 <a href="/tos">Terms and Conditions</a>
               </li>
             </MainNavList>
-          </Legal>
+          </nav>
         </MainNavArea>
       </MaxWidthWrapper>
       <SubfooterWrapper>
@@ -181,8 +181,11 @@ const MainNavArea = styled.div`
   padding: 32px 0 48px;
   text-align: center;
   @media ${QUERIES.tabletAndUp} {
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid;
+    gap: 32px 64px;
+    grid-template-columns:
+      repeat(auto-fit, minmax(200px, 1fr));
+    ;
     text-align: left;
   }
 `;
@@ -204,15 +207,6 @@ const MainNavList = styled.ul`
   }
 `;
 
-const Content = styled.nav``
-
-const Websites = styled.nav``
-
-const Careers = styled.nav``
-
-const Legal = styled.nav`
-`
-
 const SubfooterWrapper = styled.div`
   background: var(--color-offblack);
   padding: 8px 0px;
@@ -224,6 +218,9 @@ const Subfooter = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media ${QUERIES.laptopAndUp} {
+    align-items: flex-start;
+  }
 `;
 
 const Logo = styled.a`
