@@ -51,7 +51,8 @@ const Wrapper = styled.div`
     'main-story'
     'secondary-stories'
     'opinion-stories'
-    'advertisement';
+    'advertisement'
+  ;
   gap: 48px;
   margin-bottom: 48px;
 
@@ -65,8 +66,6 @@ const Wrapper = styled.div`
   }
   @media ${QUERIES.laptopAndUp} {
     grid-template-areas: 
-      'main-story secondary-stories opinion-stories'
-      'main-story secondary-stories opinion-stories'
       'main-story secondary-stories opinion-stories'
       'main-story advertisement advertisement'
     ;
@@ -123,7 +122,7 @@ const OpinionList = styled(StoryList)`
       border-bottom: none;
       margin-bottom: 0;
       padding-bottom: 0;
-      width: 100%;
+      flex: 1;
     }
   }
   @media ${QUERIES.laptopAndUp} {
@@ -146,6 +145,7 @@ const OpinionList = styled(StoryList)`
 const OpinionSection = styled.section`
   grid-area: opinion-stories;
   @media ${QUERIES.laptopAndUp} {
+    margin-top: -8px;
     h2 {
       margin-bottom: 0.5rem;
     }
