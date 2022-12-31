@@ -1,6 +1,7 @@
 import React from 'react';
 import { Twitter, Facebook } from 'react-feather';
 import styled from 'styled-components/macro';
+import { QUERIES } from '../../constants';
 import MaxWidthWrapper from '../MaxWidthWrapper';
 
 import VisuallyHidden from '../VisuallyHidden';
@@ -39,7 +40,7 @@ const Footer = () => {
           </Social>
         </TopRow>
         <MainNavArea>
-          <nav>
+          <Content>
             <MainNavHeading>Discover Content</MainNavHeading>
             <MainNavList>
               <li>
@@ -58,8 +59,8 @@ const Footer = () => {
                 <a href="/oped">Opinion and Editorial</a>
               </li>
             </MainNavList>
-          </nav>
-          <nav>
+          </Content>
+          <Websites>
             <MainNavHeading>Regional Websites</MainNavHeading>
             <MainNavList>
               <li>
@@ -78,8 +79,8 @@ const Footer = () => {
                 <a href="/au">New Grid Australia</a>
               </li>
             </MainNavList>
-          </nav>
-          <nav>
+          </Websites>
+          <Careers>
             <MainNavHeading>Careers</MainNavHeading>
             <MainNavList>
               <li>
@@ -92,8 +93,8 @@ const Footer = () => {
                 <a href="/culture">Company Culture</a>
               </li>
             </MainNavList>
-          </nav>
-          <nav>
+          </Careers>
+          <Legal>
             <MainNavHeading>Legal and Privacy</MainNavHeading>
             <MainNavList>
               <li>
@@ -112,7 +113,7 @@ const Footer = () => {
                 <a href="/tos">Terms and Conditions</a>
               </li>
             </MainNavList>
-          </nav>
+          </Legal>
         </MainNavArea>
       </MaxWidthWrapper>
       <SubfooterWrapper>
@@ -144,6 +145,15 @@ const TopRow = styled.div`
   font-size: 0.875rem;
   border-bottom: 1px solid var(--color-gray-700);
   padding: 24px 0;
+  @media ${QUERIES.tabletAndUp} {
+    flex-direction: row;
+    justify-content: center;
+    gap: 48px;
+  }
+  @media ${QUERIES.laptopAndUp} {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
 `;
 
 const Social = styled.div`
@@ -170,6 +180,11 @@ const MainNavArea = styled.div`
   gap: 32px;
   padding: 32px 0 48px;
   text-align: center;
+  @media ${QUERIES.tabletAndUp} {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
 `;
 
 const MainNavHeading = styled.h2`
@@ -183,7 +198,20 @@ const MainNavList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 4px;
+  width: 100%;
+  li {
+    white-space: nowrap;
+  }
 `;
+
+const Content = styled.nav``
+
+const Websites = styled.nav``
+
+const Careers = styled.nav``
+
+const Legal = styled.nav`
+`
 
 const SubfooterWrapper = styled.div`
   background: var(--color-offblack);
